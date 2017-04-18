@@ -1,13 +1,12 @@
 var game = new Phaser.Game(1400, 384, Phaser.CANVAS, 'phaser', { preload: preload, create: create, update: update});
 
 function preload() {
-
-	game.load.tilemap('level1', 'assets/level1.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.tilemap('level1', 'assets/level1.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tiles-1', 'assets/tiles-1.png');
     game.load.spritesheet('cat', 'assets/cat.png', 48, 35);
     game.load.spritesheet('dog', 'assets/dog.png', 64, 32);
-	game.load.spritesheet('goat', 'assets/goat.png', 37, 39);
-	game.load.spritesheet('bee', 'assets/bee.png', 28, 32);
+    game.load.spritesheet('goat', 'assets/goat.png', 37, 39);
+    game.load.spritesheet('bee', 'assets/bee.png', 28, 32);
     game.load.image('henLeg', 'assets/henLeg.png');
     game.load.image('background', 'assets/background2.png'); // need to change
 
@@ -99,17 +98,17 @@ function create() {
 	scoreText.cameraOffset.setTo(16, 16);
 
 	//The lives
-	liveText = game.add.text(200, 16, 'Lives: 9', { fontSize: '32px', fill: '#fff' });
+	liveText = game.add.text(200, 16, 'lives: 9', { fontSize: '32px', fill: '#fff' });
 	liveText.fixedToCamera = true;
 	liveText.cameraOffset.setTo(200, 16);
 
 	//Game over text
-	stateText = game.add.text(500, 100, " GAME OVER \n Click to restart", { font: '84px Arial', fill: '#fff' }); // подправить координаты
+	stateText = game.add.text(500, 100, " GAME OVER \n Click to restart", { font: '64px Arial', fill: '#fff' }); // подправить координаты
 	stateText.fixedToCamera = true;
 	stateText.visible = false;
 
 	//Game complite text
-	gameCompleteText = game.add.text(500, 100, "Game Complete \n Your score ", { font: '84px Arial', fill: '#fff' }); // подправить координаты
+	gameCompleteText = game.add.text(500, 100, "Game Complete \n Your score ", { font: '64px Arial', fill: '#fff' }); // подправить координаты
 	gameCompleteText.fixedToCamera = true;
 	gameCompleteText.visible = false;
 
@@ -208,7 +207,7 @@ function createHenLegs() {
 }
 
 function createBees() {
-    for (var y = 1; y < 4; y++)
+    for (var y = 1; y < 3; y++)
     {
         for (var x = 1; x < 6; x++)
         {
@@ -236,17 +235,17 @@ function eatHenLegs (player, henLeg) {
 
 function beeBeatsCat (player, bee) {
 	bee.kill();   
-    lives -= 1;
-    liveText.text = 'Lives: ' + lives;
+   	lives -= 1;
+    	liveText.text = 'Lives: ' + lives;
 	if (lives < 1) {
 		gameOver();
 	}
 }
 
 function goatAttack (player, goat) {
-    goat.kill();    
-    lives -= 1;
-    liveText.text = 'Lives: ' + lives;	
+   	goat.kill();    
+   	lives -= 1;
+   	liveText.text = 'Lives: ' + lives;	
 	if (lives < 1) {
 		gameOver();
 	}
