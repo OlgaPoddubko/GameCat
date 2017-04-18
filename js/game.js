@@ -108,7 +108,7 @@ function create() {
 	stateText.visible = false;
 
 	//Game complite text
-	gameCompleteText = game.add.text(500, 100, "Game Complete \n Your score ", { font: '64px Arial', fill: '#fff' }); // подправить координаты
+	gameCompleteText = game.add.text(500, 100, "Game Completed \n Your score: ", { font: '64px Arial', fill: '#fff' }); // подправить координаты
 	gameCompleteText.fixedToCamera = true;
 	gameCompleteText.visible = false;
 
@@ -230,13 +230,13 @@ function descend() {
 function eatHenLegs (player, henLeg) {
 	henLeg.kill();	
 	score += 10;
-	scoreText.text = 'Score: ' + score;
+	scoreText.text = 'score: ' + score;
 }
 
 function beeBeatsCat (player, bee) {
 	bee.kill();   
    	lives -= 1;
-    	liveText.text = 'Lives: ' + lives;
+    	liveText.text = 'lives: ' + lives;
 	if (lives < 1) {
 		gameOver();
 	}
@@ -245,7 +245,7 @@ function beeBeatsCat (player, bee) {
 function goatAttack (player, goat) {
    	goat.kill();    
    	lives -= 1;
-   	liveText.text = 'Lives: ' + lives;	
+   	liveText.text = 'lives: ' + lives;	
 	if (lives < 1) {
 		gameOver();
 	}
@@ -270,7 +270,7 @@ function restart() {
 }
 
 function gameComplete(){
-	gameCompleteText.text = 'Game Complete \n Your score ' + score + '\n click to play again';
+	gameCompleteText.text = 'Game Completed \n Your score: ' + score + '\n click to play again';
 	gameCompleteText.visible = true;
 	game.input.onTap.addOnce(restart,this);
 }
