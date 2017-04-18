@@ -217,6 +217,28 @@ function createBees() {
             bee.body.moves = false;
         }
     }
+	
+    for (var y = 1; y < 3; y++)
+    {
+        for (var x = 1; x < 6; x++)
+        {
+            var bee = bees.create(x * 40 * (0.5 + Math.random()) + 1000, y * 40 * (0.5 + Math.random()), 'bee');
+            bee.animations.add('fly', [ 0, 1, 2, 3 ], 15, true);
+            bee.play('fly');
+            bee.body.moves = false;
+        }
+    }
+	
+    for (var y = 1; y < 3; y++)
+    {
+        for (var x = 1; x < 6; x++)
+        {
+            var bee = bees.create(x * 40 * (0.5 + Math.random()) + 2000, y * 40 * (0.5 + Math.random()), 'bee');
+            bee.animations.add('fly', [ 0, 1, 2, 3 ], 15, true);
+            bee.play('fly');
+            bee.body.moves = false;
+        }
+    }
     // start the bees moving. we're moving the Group they belong to, rather than the bees directly.
     var tween = game.add.tween(bees).to( { x: 300 }, 6000, Phaser.Easing.Linear.None, true, 0, 1000, true);
     //  When the tween loops it calls descend
