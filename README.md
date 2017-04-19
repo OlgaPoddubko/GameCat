@@ -17,6 +17,6 @@ The game “The Cat that Walks by Himself ”<br>
 7. The Cat must avoid animated obstacles: dogs, goats and bees. If he collides with animate obstacles, he loses a life.<br>
 
 Links for quick watch:<br>
-https://olgapoddubko.github.io/Cat-landing-page/
-<br>
-https://olgapoddubko.github.io/GameCat/
+landing page: https://olgapoddubko.github.io/Cat-landing-page/<br>
+simple game: https://olgapoddubko.github.io/GameCat/ <br>
+presentation: http://slides.com/olgapoddubko/deck-1#/
